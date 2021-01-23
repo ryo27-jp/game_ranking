@@ -6,12 +6,6 @@ p
 p
   strong Email:
   = @user.email
-p
-  strong Crypted password:
-  = @user.crypted_password
-p
-  strong Salt:
-  = @user.salt
 
 => link_to 'Edit', edit_user_path(@user)
 '|
