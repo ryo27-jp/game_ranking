@@ -1,2 +1,20 @@
 h1 Games#index
-p Find me in app/views/games/index.html.slim
+
+table.table.table-hover
+  thead.thead-default
+    tr
+      th = Game.human_attribute_name(:title)
+      th = Game.human_attribute_name(:release_date)
+      th = Game.human_attribute_name(:description)
+      th = Game.human_attribute_name(:production)
+      th
+  tbody
+    - @games.each do |game|
+      tr
+        td= game.title
+        td= game.release_date
+        td= game.description
+        td= game.production
+        td
+            = link_to '削除', game_path(game), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' }
+
