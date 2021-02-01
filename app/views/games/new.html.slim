@@ -1,2 +1,19 @@
 h1 Games#new
-p Find me in app/views/games/new.html.slim
+
+.card.mb-3
+  = form_with model: @game, class: 'card-body', local: true do |f|
+    / = render 'shared/error_messages', object: @user
+    .form-group
+      = f.label :title, class: 'bmd-label-floating'
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :description, class: 'bmd-label-floating'
+      = f.text_field :description, class: 'form-control'
+    .form-group
+      = f.label :release_date, class: 'bmd-label-floating'
+      = f.date_field :release_date, class: 'form-control'
+    .form-group
+      = f.label :production, class: 'bmd-label-floating'
+      = f.text_field :production, class: 'form-control'
+
+    = f.submit '登録', class: 'btn btn-raised btn-primary'
