@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_113207) do
+ActiveRecord::Schema.define(version: 2021_02_01_140745) do
 
   create_table "games", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title", null: false
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2021_02_01_113207) do
     t.string "production", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_reviews_on_game_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -32,4 +41,6 @@ ActiveRecord::Schema.define(version: 2021_02_01_113207) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "reviews", "games"
+  add_foreign_key "reviews", "users"
 end
