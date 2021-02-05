@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root :to => 'users#index'
   resources :users
-  resources :games
+  resources :games do
+    resources :reviews, shallow: true
+  end
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

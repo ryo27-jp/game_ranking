@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   enum role: { general: 1, admin: 9 }
+
+  has_many :reviews, dependent: :destroy
 end
