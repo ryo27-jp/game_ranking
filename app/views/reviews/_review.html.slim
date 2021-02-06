@@ -1,3 +1,7 @@
-
-= review.user.name
-= review.body
+.row.no-gutters
+  .col-5
+    span.font-weight-bold.pr-1
+      = review.user.name
+    = review.body
+  .col-2
+        = link_to "削除", review_path(review),class: 'mr-3', method: :delete, data: {confirm: '本当に削除しますか？'}
