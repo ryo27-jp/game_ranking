@@ -18,5 +18,5 @@ table.table.table-hover
 
 = render 'reviews/reviews', reviews: @reviews
 / = render partial: "reviews/reviews", collection: @reviews
-
-= render 'reviews/form', review: @review, game: @game
+- if logged_in?
+  = render 'reviews/form', review: @review, game: @game

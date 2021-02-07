@@ -4,4 +4,5 @@
       = review.user.name
     = review.body
   .col-2
+      -if review.user_id == current_user&.id
         = link_to "削除", review_path(review),class: 'mr-3', method: :delete, data: {confirm: '本当に削除しますか？'}
