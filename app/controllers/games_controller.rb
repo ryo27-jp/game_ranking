@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   # before_action :require_login
 
   def index
-    @games = Game.all
+    @pagy, @games = pagy(Game.all)
   end
 
   def show

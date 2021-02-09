@@ -19,6 +19,9 @@ table.table.table-hover
             = link_to 'Show', game,class: 'mr-3'
             = link_to '削除', game_path(game), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' }
 
+
+= pagy_bootstrap_nav(@pagy).html_safe
+
 - if current_user&.admin?
   = link_to 'New Game', new_game_path
 
