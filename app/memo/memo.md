@@ -15,3 +15,7 @@ enum https://pikawaka.com/rails/enum#boolean%E3%81%AE%E5%A0%B4%E5%90%88
 シェルにインストールしたcodeコマンドがPCを再起動する度に消えていた。
 https://hiroga.hatenablog.com/entry/2018/07/18/224830
 vscodeがダウンロードディレクトリから実行されている事が原因か？
+
+1
+2
+3
