@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'users#index'
+  root to: 'users#index'
   resources :users
   resources :games do
     resources :reviews, shallow: true

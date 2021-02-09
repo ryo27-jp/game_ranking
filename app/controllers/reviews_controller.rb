@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :require_login
-  
-  # def new 
+
+  # def new
   #   @review = Review.new
   # end
 
@@ -22,8 +22,7 @@ class ReviewsController < ApplicationController
 
   private
 
-    def review_params
-      params.require(:review).permit(:body).merge(user_id: current_user.id, game_id: params[:game_id])
-    end
-
+  def review_params
+    params.require(:review).permit(:body).merge(user_id: current_user.id, game_id: params[:game_id])
+  end
 end

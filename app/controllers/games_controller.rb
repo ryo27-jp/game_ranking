@@ -26,9 +26,7 @@ class GamesController < ApplicationController
     end
   end
 
-
-  def edit
-  end
+  def edit; end
 
   def destroy
     @game = Game.find(params[:id])
