@@ -1,5 +1,6 @@
 h1 Games#show
-
+- if logged_in?
+  = render 'like_area', game: @game
 table.table.table-hover
   tbody
     tr 

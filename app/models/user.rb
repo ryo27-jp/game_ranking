@@ -10,5 +10,18 @@ class User < ApplicationRecord
   enum role: { general: 1, admin: 9 }
 
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_games, through: :likes, source: :game
 
+  def like?(game)
+    like_games.include?(game)
+  end
+
+  def like(game)
+    like_games << game
+  end
+
+  def unlike(game)
+    like_games.delete(game)
+  end
 end

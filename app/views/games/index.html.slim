@@ -8,6 +8,7 @@ table.table.table-hover
       th = Game.human_attribute_name(:description)
       th = Game.human_attribute_name(:production)
       th
+      th
   tbody
     - @games.each do |game|
       tr
@@ -16,6 +17,9 @@ table.table.table-hover
         td= game.description
         td= game.production
         td  
+            - if logged_in? 
+              = render 'like_area', game: game
+        td
             = link_to 'Show', game,class: 'mr-3'
             = link_to '削除', game_path(game), class: 'mr-3', method: :delete, data: { confirm: '本当に削除しますか？' }
 

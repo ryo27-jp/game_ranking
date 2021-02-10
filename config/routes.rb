@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'games#index'
+  resources :likes
   resources :users
   resources :games do
     resources :reviews, shallow: true
