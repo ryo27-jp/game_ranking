@@ -3,6 +3,9 @@ h1 Games#show
   = render 'like_area', game: @game
 table.table.table-hover
   tbody
+    tr
+      th= Game.human_attribute_name(:image)
+      td= image_tag @game.image.url, size: '100x100' 
     tr 
       th= Game.human_attribute_name(:title)
       td= @game.title
