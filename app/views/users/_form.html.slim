@@ -1,6 +1,9 @@
 .card.mb-3
   = form_with model: @user, class: 'card-body', local: true do |f|
-    / = render 'shared/error_messages', object: @user
+     / = render 'shared/error_messages', object: @user
+    .form-group
+      = f.label :avatar, class: 'bmd-label-floating'
+      = f.file_field :avatar, class: 'form-control'
     .form-group
       = f.label :name, class: 'bmd-label-floating'
       = f.text_field :name, class: 'form-control'
