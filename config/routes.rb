@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :reviews, shallow: true
   end
 
+  resource :mypage
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
