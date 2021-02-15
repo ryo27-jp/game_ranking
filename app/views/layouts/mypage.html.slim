@@ -16,6 +16,8 @@ html
       = render 'shared/before_login_header'
     main
       .container
+        - breadcrumb :edit_mypage
+        = render "layouts/breadcrumbs"
         .row
           .col-md-10.offset-md-1
             .card

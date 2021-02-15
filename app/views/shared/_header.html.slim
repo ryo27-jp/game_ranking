@@ -2,11 +2,10 @@
   = link_to 'げま', root_path, class: 'navbar-brand'
   ul.nav.ml-auto
     li.nav-item
-      = link_to "Edit Profile", edit_user_path(current_user.id), class: 'nav-link'
-    li.nav-item
-      = link_to "Logout", :logout, class: 'nav-link', method: :delete
-    li.nav-item
       = link_to "Game", games_path, class: 'nav-link'
     li.nav-item
       = link_to "Mypage", mypage_path, class: 'nav-link'
+    li.nav-item
+      = link_to "Logout", :logout, class: 'nav-link', method: :delete
+    
 
