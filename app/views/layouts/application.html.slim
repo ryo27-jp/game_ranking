@@ -9,20 +9,10 @@ html
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
     = stylesheet_pack_tag 'application'
-body
-  #nav
-    - if current_user
-      = link_to "Edit Profile", edit_user_path(current_user.id)
-      = link_to "Logout", :logout, method: :delete
-      = link_to "Game", games_path
+  body
+    - if logged_in?
+      = render 'shared/header'
     - else
-      = link_to "Register", new_user_path
-      |  | 
-      = link_to "Game", games_path
-      = link_to "Login", :login
-  div
-    p#notice
-      = flash[:notice]
-    p#alert
-      = flash[:alert]
-  = yield
+      = render 'shared/before_login_header'
+    main
+      = yield

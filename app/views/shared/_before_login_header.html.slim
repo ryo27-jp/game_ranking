@@ -1,0 +1,9 @@
+.nav.bg-light.navbar-light
+  = link_to 'げま', root_path, class: 'navbar-brand'
+  ul.nav.ml-auto
+    li.nav-item
+      = link_to "Register", new_user_path, class: 'nav-link'
+    li.nav-item
+      = link_to "Game", games_path, class: 'nav-link'
+    li.nav-item
+      = link_to "Login", :login, class: 'nav-link'

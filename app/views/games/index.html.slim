@@ -1,5 +1,5 @@
 h1 Games#index
-
+              
 table.table.table-hover
   thead.thead-default
     tr
@@ -29,3 +29,17 @@ table.table.table-hover
 - if current_user&.admin?
   = link_to 'New Game', new_game_path
 
+
+/ カード使って見たけどここでは微妙
+/ .container
+/   .row
+/     - @games.each do |game|
+/       .col-sm-4
+/         .card
+/           .card-body
+/             h5.card-title
+/               = game.title
+/             p.card-text
+/               | With supporting text below as a natural lead-in to additional content.
+/             a.btn.btn-primary[href="#"]
+/               = link_to '詳細', game_path(game)
