@@ -1,2 +1,14 @@
 .breadcrumbs
-  = breadcrumbs pretext: "you are here:", separator: " &rsaquo; "
+  - case params.values_at :controller, :action
+
+  - when ['mypages', 'show']
+   - breadcrumb :mypage
+
+
+  - when ['mypages', 'edit']
+    - breadcrumb :edit_mypage
+
+      / - when ['user_chat_rooms', 'index']
+      /  - breadcrumb :user_chat_rooms_index
+
+  = breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "
