@@ -36,10 +36,13 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'slim-rails'
+
+
 end
 
 group :development do
@@ -53,7 +56,6 @@ group :development do
   gem 'faker'
   gem 'html2slim'
   gem 'rubocop'
-  gem 'slim-rails'
   gem 'spring'
   gem 'gretel'
 end
